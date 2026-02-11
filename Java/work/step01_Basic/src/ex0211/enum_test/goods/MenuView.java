@@ -1,4 +1,4 @@
-package ex0206.array.goods;
+package ex0211.enum_test.goods;
 import java.util.Scanner;
 /**
  키보드 입력을 받아 각 기능을 호출해줄 View
@@ -50,32 +50,44 @@ public class MenuView{
   /**
      등록관련 키보드 입력
   */
-  public void inputInsert(){
-       //키보드입력 4개 받기 
-	   System.out.print("상품코드 > ");
-	   String code = sc.nextLine();
+  	public void inputInsert(){
+		// 키보드입력 4개 받기
+		System.out.print("상품코드 > ");
+		String code = sc.nextLine();
 
-	   System.out.print("상품이름 > ");
-	   String name = sc.nextLine();
+		System.out.print("상품이름 > ");
+		String name = sc.nextLine();
 
-	   System.out.print("상품가격 > ");
-	   int price = Integer.parseInt(sc.nextLine());
+		System.out.print("상품가격 > ");
+		int price = Integer.parseInt(sc.nextLine());
 
-	   System.out.print("상품설명 > ");
-	   String explain = sc.nextLine();
+		System.out.print("상품설명 > ");
+		String explain = sc.nextLine();
 
+		// 생성자를 추가하여 값을 전달하자(데이터 초기화)
+		Goods goods = new Goods(code, name, price, explain);
 
-	 //생성자를 추가하여 값을 전달하자(데이터 초기화)
-       Goods goods = new Goods(code, name, price, explain);
+		InsertResult result = service.insert(goods);
 
-	   int result = service.insert(goods);
+		/*
+		 * if(result==InsertResult.INSERT_OUTINDEX)
+		 * EndView.printMessage("더이상 등록할 수 없습니다."); else
+		 * if(result==InsertResult.INSERT_DUPLICATE)
+		 * EndView.printMessage(code+"는 중복이므로 등록할수 없습니다."); else
+		 * EndView.printMessage("상품이 등록되었습니다.");
+		 */
 
-	   if(result==-1)
-		  EndView.printMessage("더이상 등록할 수 없습니다.");
-	   else if(result==0)
-		  EndView.printMessage(code+"는 중복이므로 등록할수 없습니다.");
-	   else 
-           EndView.printMessage("상품이 등록되었습니다.");
+		switch (result) {
+		case INSERT_DUPLICATE:
+			EndView.printMessage("더이상 등록할 수 없습니다.");
+			break;
+		case INSERT_OUTINDEX:
+			EndView.printMessage(code + "는 중복이므로 등록할 수 없습니다.");
+			break;
+		case INSERT_SUCCESS:
+			EndView.printMessage("상품이 등록되었습니다.");
+			break;
+		}
   }
   
   public void inputSelectAll() {

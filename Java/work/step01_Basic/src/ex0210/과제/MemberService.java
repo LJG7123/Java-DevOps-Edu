@@ -8,7 +8,7 @@ package ex0210.과제;
  * */
 public class MemberService {
 	public boolean login(String id, String password) {
-		return (id.equals("hong") && password.equals("12345"));
+		return ("hong".equals(id) && "12345".equals(password));
 	}
 	
 	public void logout(String id) {
