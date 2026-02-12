@@ -1,0 +1,18 @@
+1. 1
+2. 2
+3. 1
+4. 4
+5. 2
+6. 부모 클래스에 기본 생성자가 없고 매개변수를 가지는 생성자가 정의되어 있기 때문에, 자식 클래스의 생성자에서 
+   super(name) 을 통해 해당 생성자를 반드시 호출해야 한다.
+7. Parent(String nation) call
+   Parent() call
+   Child(String name) call
+   Child() call
+8. 스노우 타이어가 굴러갑니다.
+   스노우 타이어가 굴러갑니다.
+9. 2
+10. 추상 클래스인 Machine 을 상속받았기 때문에, 추상 메소드인 work()를 재정의하여 구현하거나, 
+    혹은 Computer 클래스도 추상 클래스로 정의해야 한다.
+11. super
+12. a instanceof C c
