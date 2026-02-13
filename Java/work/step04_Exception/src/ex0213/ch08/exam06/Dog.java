@@ -1,0 +1,10 @@
+package ex0213.ch08.exam06;
+
+public class Dog implements Soundable {
+
+	@Override
+	public String sound() {
+		return "멍멍";
+	}
+
+}
