@@ -25,8 +25,7 @@ public class Audio extends Elec implements ElecFunction {
 
 	@Override
 	public void start() {
-		System.out.println(super.getCode() + "의 Audio를 " + volumn + "으로 듣는다.");
-		
+		System.out.println(getCode() + "의 Audio를 " + volumn + "으로 듣는다.");
 	}
 
 	@Override

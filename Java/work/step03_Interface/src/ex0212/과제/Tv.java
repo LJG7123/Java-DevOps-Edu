@@ -25,8 +25,7 @@ public class Tv extends Elec implements ElecFunction {
 
 	@Override
 	public void start() {
-		System.out.println(super.getCode() + "제품 TV를 " + channel + "을 본다.");
-		
+		System.out.println(getCode() + "제품 TV를 " + channel + "을 본다.");
 	}
 
 	@Override

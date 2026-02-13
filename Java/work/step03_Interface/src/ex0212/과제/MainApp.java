@@ -15,7 +15,7 @@ public class MainApp {
 
 		for (ElecFunction e : elec) {
 			e.start();
-			//System.out.println(e);
+			System.out.println(e);
 		}
 
 	}

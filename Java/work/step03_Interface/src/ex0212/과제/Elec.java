@@ -30,7 +30,8 @@ public class Elec {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Elec [code=");
+		builder.append(getClass().getSimpleName());
+		builder.append(" [code=");
 		builder.append(code);
 		builder.append(", cost=");
 		builder.append(cost);
