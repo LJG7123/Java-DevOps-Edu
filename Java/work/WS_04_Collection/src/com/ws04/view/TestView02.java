@@ -1,4 +1,5 @@
 package com.ws04.view;
+
 import java.util.List;
 
 import com.ws04.dto.AccountDto;
@@ -9,7 +10,7 @@ public class TestView02 {
 		
 		BankService bankService = new BankService();
 		System.out.println("1. 모든 계좌정보 조회 ------");
-		print(   bankService.getAccountList()  );
+		print(bankService.getAccountList());
 		
 		System.out.println("2.잔액기준으로 정렬하기 -------------");
 		print(bankService.getAccountListSortByBalance());

@@ -6,8 +6,8 @@ import com.ws06.service.BankService;
 import com.ws06.service.BankServiceImpl;
 
 public class TestView02 {
+	
 	public static void main(String[] args) {
-		
 		BankService bankService = new BankServiceImpl();
 		System.out.println("1. 모든 계좌정보 조회 ------");
 		print(   bankService.getAccountList()  );

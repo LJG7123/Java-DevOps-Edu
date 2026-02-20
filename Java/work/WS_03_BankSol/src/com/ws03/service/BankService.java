@@ -53,32 +53,31 @@ public class BankService {
 	  특정 사용자의 계좌 목록을 배열로 리턴 하는 메소드를 작성한다
 	*/
 	public AccountDto[] getAccountList(int userSeq) { // 100 
-		 int searchAccountCount=0; //인수로 전달된 userSeq에 해당하는 계좌의 개수를 체크 
-		
-		 //리턴해서 나갈 배열의 개수를 미리 알아내여 선언하기 위해 반복문필요 
-		 for(int i=0; i < ACCOUNT_CURRENT_SIZE ; i++) {
-				if( accountList[i].getUserSeq()  == userSeq) {
-					 //찾았다!!
-					searchAccountCount++;
-				}
-		}
-			
-			//위에서 찾은 정보를 바탕으로  AccountDto배열에서 계좌정보를 찾아서  리턴해준다.
-			//찾은 고객의 계좌의 수만큼 배열을 생성해서 그 배열을 리턴
-			if(searchAccountCount==0)
-				return null;
-			
-			AccountDto [] searchAccountDtoList =  new AccountDto [searchAccountCount];
-			
-			int count=0;
-			for(int i=0; i < ACCOUNT_CURRENT_SIZE ; i++) {
-				if( accountList[i].getUserSeq()  == userSeq) {
-					searchAccountDtoList[count++] =  accountList[i];
-				}
+		int searchAccountCount = 0; // 인수로 전달된 userSeq에 해당하는 계좌의 개수를 체크
+
+		// 리턴해서 나갈 배열의 개수를 미리 알아내여 선언하기 위해 반복문필요
+		for (int i = 0; i < ACCOUNT_CURRENT_SIZE; i++) {
+			if (accountList[i].getUserSeq() == userSeq) {
+				// 찾았다!!
+				searchAccountCount++;
 			}
-			
-			
-			return searchAccountDtoList;
+		}
+
+		// 위에서 찾은 정보를 바탕으로 AccountDto배열에서 계좌정보를 찾아서 리턴해준다.
+		// 찾은 고객의 계좌의 수만큼 배열을 생성해서 그 배열을 리턴
+		if (searchAccountCount == 0)
+			return null;
+
+		AccountDto[] searchAccountDtoList = new AccountDto[searchAccountCount];
+
+		int count = 0;
+		for (int i = 0; i < ACCOUNT_CURRENT_SIZE; i++) {
+			if (accountList[i].getUserSeq() == userSeq) {
+				searchAccountDtoList[count++] = accountList[i];
+			}
+		}
+
+		return searchAccountDtoList;
 	}
 	
 	

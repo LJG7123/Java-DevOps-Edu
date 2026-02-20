@@ -22,29 +22,26 @@ public class BankService {
 	 * 생성자에서 테스트를 위한 고객 및 계좌 객체를 생성하고 배열에 저장한다
 	 * */
 	public BankService() {
-		//배열 생성
-		userList = new ArrayList<>();
-		accountList = new ArrayList<>();
+		userList = new ArrayList<UserDto>(); 
+		accountList = new ArrayList<AccountDto>(); 
+
+		userList.add( new UserDto(111, "홍길동", "hong@gildong@com", "010-1111-1111", false) );
+		userList.add( new UserDto(222, "이길동", "lee@gildong@com", "010-2222-2222", true) );
+		userList.add( new UserDto(333, "삼길동", "sam@gildong@com", "010-3333-3333", false) );
 		
-		// 각 배열방에 고객과 계좌를 생성한다.
-		 //고객 4명
-		userList.add(new UserDto(100, "장희정", "8253jang@daum.net", "010-8875-8253", false));
-		userList.add(new UserDto(200, "이효리", "lee@daum.net", "010-2222-3333", false));
-		userList.add(new UserDto(300, "송중기", "song@naver.com", "010-5554-2222", false));
-		userList.add(new UserDto(400, "삼순이", "sam@daum.com", "010-2222-2222", false));
-		 
-		 
-		 //계좌는 6개 정도
-		accountList.add(new AccountDto(1, "1111-11111", 1000000, 100));
-		accountList.add(new AccountDto(2, "2222-22222", 250000, 100));
-		accountList.add(new AccountDto(3, "3333-33333", 350000, 100));
+		accountList.add( new InstallAccountDto(20, "00200202002002", 1000, 111, 12, 10000) );
 		
-		accountList.add(new SavingAccountDto(4, "4444-44444", 150000, 200, 100));
-		accountList.add(new LoanAccountDto(5, "5555-55555", 250000, 200, "주택"));
+		accountList.add( new SavingAccountDto(10, "00100101001001", 500, 111, 100) );
 		
-		accountList.add(new InstallAccountDto(6, "6666-66666", 350000, 300, 24, 100));
-		 
-		 System.out.println("---세팅완료!!----");
+		accountList.add( new LoanAccountDto(60, "00600606006006", 500, 333, "House") );
+		accountList.add( new LoanAccountDto(30, "00300303003003", 0, 111, "Building") );
+		
+		accountList.add( new SavingAccountDto(70, "00700707007007", 500, 333, 200) );
+		
+		accountList.add( new LoanAccountDto(50, "00500505005005", 200, 222, "Car") );
+		accountList.add( new SavingAccountDto(40, "00400404004004", 1000, 222, 50) );
+		
+		System.out.println("---세팅완료!!----");
 		 
 		 
 	}//생성자 끝
