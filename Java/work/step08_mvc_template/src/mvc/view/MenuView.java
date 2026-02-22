@@ -19,7 +19,7 @@ public class MenuView{
         
 		 while(true){
 	           System.out.println("----------------------------------------------------------------------------------");
-	           System.out.println("1. 전체검색    2. 모델번호검색     3.등록     4. 수정   5. 삭제   6.가격기준정렬  9. 종료");
+	           System.out.println("1.전체검색  2.모델번호검색  3.등록  4.수정  5.삭제  6.가격기준정렬  7.가격기준검색  8.키워드검색  9.종료");
 			   System.out.println("----------------------------------------------------------------------------------");
 			   System.out.print("메뉴선택 > ");
 
@@ -42,6 +42,12 @@ public class MenuView{
 					break;
 				case "6":
 					controller.selectSortByPrice();
+					break;
+				case "7":
+					this.inputPriceSearch();
+					break;
+				case "8":
+					this.inputKeywordSearch();
 					break;
 				case "9":
 					System.exit(0);
@@ -110,5 +116,16 @@ public class MenuView{
 
  
 	}
-
+  
+  	public void inputPriceSearch() {
+  		System.out.print("검색할 전자제품의 최대가는? ");
+  		int maxPrice = Integer.parseInt(sc.nextLine());
+  		controller.selectByPriceBelow(maxPrice);
+  	}
+  	
+  	public void inputKeywordSearch() {
+  		System.out.print("검색할 키워드는? ");
+  		String keyword = sc.nextLine();
+  		controller.selectByKeyword(keyword);
+  	}
 }

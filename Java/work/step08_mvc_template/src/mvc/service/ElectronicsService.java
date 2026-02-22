@@ -71,11 +71,18 @@ public interface ElectronicsService {
     public List<Electronics> selectSortByPrice() ;
     
     /**
-     * 가격이 입력한 가격 이하인 전자제품
+     * 가격이 입력한 가격 이하인 전자제품을 검색
      * @param maxPrice
      * @return
      */
     public List<Electronics> selectByPriceBelow(int maxPrice);
+    
+    /**
+     * 입력한 키워드가 포함된 전자제품을 검색
+     * @param keyword
+     * @return
+     */
+    public List<Electronics> selectByKeyword(String keyword);
 
 }
 

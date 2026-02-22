@@ -110,4 +110,19 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 		
 		return findList;
 	}
+	
+	@Override
+	public List<Electronics> selectByKeyword(String keyword) {
+		List<Electronics> findList = new ArrayList<>();
+		String keywordUpperCase = keyword.toUpperCase();
+		
+		for (Electronics e : list) {
+			String name = e.getModelName().toUpperCase();
+			String detail = e.getModelDetail().toUpperCase();
+			
+			if (name.contains(keywordUpperCase) || detail.contains(keywordUpperCase)) findList.add(e);
+		}
+		
+		return findList;
+	}
 } // 클래스 끝 

@@ -94,6 +94,10 @@ public class ElectronicsController {
     public void selectByPriceBelow(int maxPrice) {
     	SuccessView.printAll(service.selectByPriceBelow(maxPrice));
     }
+    
+    public void selectByKeyword(String keyword) {
+    	SuccessView.printAll(service.selectByKeyword(keyword));
+    }
 }
 
 
