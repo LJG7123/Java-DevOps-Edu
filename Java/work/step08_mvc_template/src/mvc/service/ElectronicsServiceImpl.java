@@ -90,13 +90,14 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	public List<Electronics> selectSortByPrice() {
 		List<Electronics> sorted = new ArrayList<>(list);
 		
-		Collections.sort(sorted, (a, b) -> {
-			if (a.getModelPrice() == b.getModelPrice()) {
-				return a.getModelNo() - b.getModelNo();
-			}
-			return a.getModelPrice() - b.getModelPrice();
-		}); 
+//		Collections.sort(sorted, (a, b) -> {
+//			if (a.getModelPrice() == b.getModelPrice()) {
+//				return a.getModelNo() - b.getModelNo();
+//			}
+//			return a.getModelPrice() - b.getModelPrice();
+//		}); 
 		
+		Collections.sort(sorted, (a, b) -> a.getModelPrice() == b.getModelPrice() ? a.getModelNo() - b.getModelNo() : a.getModelPrice() - b.getModelPrice());		
 		return sorted;
 	}
     
