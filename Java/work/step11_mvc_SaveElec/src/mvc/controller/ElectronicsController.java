@@ -110,7 +110,12 @@ public class ElectronicsController {
     
     
     public void saveElectronicsToFile() {
-    	service.saveObject();
+    	try {
+    		service.saveObject();
+    		SuccessView.printMessage("정보가 저장되었습니다. 프로그램을 종료합니다.");
+    	} catch (Exception e) {
+    		FailView.errorMessage(e.getMessage());
+    	}
     }
 }
 

@@ -3,6 +3,7 @@ package mvc.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -26,7 +27,8 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	private static ElectronicsService instance = new ElectronicsServiceImpl();
 	private static final int MAX_SIZE = 6;
 	List<Electronics> list = new ArrayList<Electronics>();
-	File file = new File("electronics.txt");
+	String path = System.getProperty("user.dir") + "/electronics.txt";
+	File file = new File(path);
 
 	/**
 	 * 외부에서 객체 생성안됨. InitInfo.properties파일을 로딩하여 List에 추가하여 초기치 데이터를 만든다.
@@ -34,12 +36,14 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	 */
 	private ElectronicsServiceImpl() {
 		if (file.exists()) {
+			// 파일이 존재하면 파일을 읽어온다
 			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
 				list.addAll((List<Electronics>) ois.readObject());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else {
+			// 파일이 없으면 properties를 읽어온다
 			ResourceBundle rb = ResourceBundle.getBundle("InitInfo");// dbInfo.properties
 			for (String key : rb.keySet()) {
 				String value = rb.getString(key);
@@ -163,11 +167,9 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	}
 
 	@Override
-	public void saveObject() {
+	public void saveObject() throws Exception {
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
 			oos.writeObject(list);
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 

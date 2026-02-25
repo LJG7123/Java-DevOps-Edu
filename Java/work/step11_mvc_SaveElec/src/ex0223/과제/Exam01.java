@@ -8,7 +8,8 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Exam01 {
-
+	String path = System.getProperty("user.dir") + "/";
+	
 	public static void main(String[] args) {
 		Exam01 ex = new Exam01();
 		
@@ -48,7 +49,7 @@ public class Exam01 {
 		System.out.print("비밀번호> ");
 		String pw = sc.next();
 		
-		File file = new File(name);
+		File file = new File(path + name);
 		if (file.exists()) {
 			System.out.println("이미 존재하므로 다시 입력하세요.");
 			return;
@@ -69,7 +70,7 @@ public class Exam01 {
 		System.out.print("이름> ");
 		String name = sc.next();
 		
-		File file = new File(name);
+		File file = new File(path + name);
 		if (!file.exists()) {
 			System.out.println(name + "에 해당하는 정보는 없습니다.");
 			return;

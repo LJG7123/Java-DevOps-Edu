@@ -1,10 +1,8 @@
 package mvc.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import mvc.dto.Electronics;
-import mvc.exception.DMLException;
 import mvc.exception.DuplicateModelNoEexepction;
 import mvc.exception.ElectronicsArrayBoundsException;
 import mvc.exception.SearchNotFoundException;
@@ -73,7 +71,7 @@ public interface ElectronicsService {
     
     
     ///// 종료했을대 해야할 일( 객체(List)를 파일에 저장)///////////////////////////
-    public void saveObject();
+    public void saveObject() throws Exception;
 }
 
 
