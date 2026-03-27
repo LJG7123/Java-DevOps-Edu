@@ -17,7 +17,9 @@ public class Test05 {
                  new Student("현솔", 25, 81.7, "Physics")
         );
 
-        String str = students.stream().map(Student::getName).collect(Collectors.joining(", "));
+        String str = students.stream()
+        		.map(Student::getName)
+        		.collect(Collectors.joining(", "));
         System.out.println(str);
 
 

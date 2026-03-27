@@ -17,7 +17,11 @@ public class Test08 {
                  new Student("현솔", 25, 81.7, "Physics")
         );
 
-        List<String> list = students.stream().filter(s -> s.getScore() >= 90).map(Student::getMajor).map(String::toUpperCase).collect(Collectors.toList());
+        List<String> list = students.stream()
+        		.filter(s -> s.getScore() >= 90)
+        		.map(s -> s.getMajor().toUpperCase())
+//        		.map(String::toUpperCase)
+        		.collect(Collectors.toList());
         System.out.println(list);
        
 
