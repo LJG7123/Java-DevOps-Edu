@@ -1,0 +1,11 @@
+footer ul {
+  background-color: lightcyan;
+  list-style-type: none;
+}
+
+footer li {
+  text-align: right;
+  font-size: 12px;
+  padding-top: 8px;
+  padding-right: 8px;
+}

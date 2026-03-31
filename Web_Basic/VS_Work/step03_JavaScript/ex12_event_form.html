@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style type="text/css">
+            tr th {
+                background-color: pink;
+            }
+            td,
+            th {
+                padding: 3px;
+            }
+            div {
+                width: 200px;
+                height: 100px;
+                border: 1px red solid;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>[ 이벤트 등록 + Dom접근 ]</h1>
+        <form name="member" action="http://www.naver.com">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td>
+                        <input type="text" name="id" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>결과</th>
+                    <td><input type="text" name="result" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="전송" /></td>
+                </tr>
+            </table>
+        </form>
+        <hr />
+        <div id="result"></div>
+
+        <script>
+            document.querySelector("form").onsubmit = function () {
+                event.preventDefault();
+                // console.log("되니?");
+                // id박스에 값이 있는지 체크
+                // document.querySelector("[name=id]").value = "되니?";
+
+                let idEle = document.querySelector("[name=id]");
+                if (idEle.value === "") {
+                    alert("아이디에 값을 입력해주세요.");
+                    idEle.focus();
+                } else {
+                    // 결과 박스에 값을 넣기
+                    /*
+                    1) form 요소에 값 넣기 - value
+                    2) form 요소를 제외한 p, a, td, div, span - innerHTML or innerText
+                        - innerHTML : 마크업을 사용하는 경우
+                        - innerText : 마크업 없이 문자열(text) 인 경우
+                    */
+                    document.querySelector("[name=result]").value = idEle.value;
+                    //    document.querySelector("#result").innerText = idEle.value;
+                    document.querySelector("#result").innerHTML +=
+                        "<h4>" + idEle.value + "</h4>";
+
+                    // id박스 text 지우기
+                    idEle.value = "";
+                    // 커서 놓기
+                    idEle.focus();
+                }
+            };
+        </script>
+    </body>
+</html>

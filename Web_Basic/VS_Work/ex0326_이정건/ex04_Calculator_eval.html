@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #result {
+                width: 200px;
+                height: 150px;
+                border: 1px red solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>계산해보자</h3>
+        <button>계산</button>
+        <div id="result"></div>
+
+        <script>
+            let btn = document.querySelector("button");
+
+            const func = () => {
+                let num1 = prompt("첫번째 숫자");
+                let num2 = prompt("두번째 숫자");
+                let calc = prompt("연산기호");
+
+                if (
+                    isNaN(num1) ||
+                    isNaN(num2) ||
+                    (calc !== "+" &&
+                        calc !== "-" &&
+                        calc !== "*" &&
+                        calc !== "/")
+                ) {
+                    let res = confirm("입력이 잘못됨. 다시 할래?");
+                    res && func();
+                } else {
+                    let result = new Function("return " + num1 + calc + num2)();
+                    let div = document.getElementById("result");
+                    div.innerHTML = `<h4>${num1} ${calc} ${num2} = ${result}</h4>`;
+                }
+            };
+
+            btn.onclick = func;
+        </script>
+    </body>
+</html>

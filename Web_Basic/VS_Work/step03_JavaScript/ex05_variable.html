@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>변수에 대해서 알아보자 - var vs let vs const</h1>
+    <script>
+      /*
+        변수 선언 - 선언할 때 var 생략도 가능
+        var 변수이름;
+        var 변수이름 = 값;
+        */
+
+      var a;
+      var b = 20;
+      c = 3.14;
+      document.write("<h4>");
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<br>");
+      document.write("<hr/>");
+      a = "안녕하세요";
+      b = [1, "hi", 3.14, true];
+      c = false;
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<br>");
+      document.write("<hr/>");
+      var a = "졸지말아요~";
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("age = " + age + ", " + typeof age + "<br>");
+
+      var age = 20;
+      document.write("age = " + age + ", " + typeof age + "<hr>");
+      document.write("</h4>");
+
+      //자바스크립트에서 변수의 scope에 대해 알아보자
+      document.write("<h1>변수의 scope에 대해 알아보자</h1>");
+      var i = 10;
+      function test2() {
+        var i = 5; // 지역변수
+        var j = 20; // 지역변수
+        k = 50; // 함수 안에서 선언되는 변수에 var를 생략하면 전역변수
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        console.log("j = " + j);
+        console.log("k = " + k);
+      }
+
+      function test3() {
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        // console.log("j = " + j);
+        console.log("k = " + k);
+
+        console.log("전 : index = " + index);
+        for (var index = 0; index <= 10; index++) {}
+
+        console.log("후 : index = " + index);
+
+        console.log("전 : nickname = " + nickname);
+        {
+          var nickname = "정건";
+        }
+        console.log("후 : nickname = " + nickname);
+      }
+
+      test2();
+      test3();
+    </script>
+  </body>
+</html>

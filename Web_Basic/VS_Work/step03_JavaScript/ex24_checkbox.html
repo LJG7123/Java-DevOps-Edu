@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>취미선택</legend>
+                <input type="checkbox" name="all" value="all" />
+                <span id="span">전체선택</span>
+                <p>
+                    <input type="checkbox" name="hobby" value="등산" />등산
+                    <input type="checkbox" name="hobby" value="수영" />수영
+                    <input type="checkbox" name="hobby" value="낚시" />낚시
+                    <input type="checkbox" name="hobby" value="놀기" />놀기
+                    <input type="checkbox" name="hobby" value="먹기" />먹기
+
+                    <input type="button" value="클릭" />
+                </p>
+            </fieldset>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.querySelector("[value=클릭]").addEventListener(
+                "click",
+                function () {
+                    // 선택된 취미의 value를 div영역에 넣는다.
+                    let hobbies = document.querySelectorAll(
+                        "[name=hobby]:checked",
+                    );
+                    document.getElementById("result").innerHTML =
+                        "<h4>" +
+                        Array.from(hobbies)
+                            .map((ele) => ele.value)
+                            .join(",") +
+                        "</h4>";
+                },
+                false,
+            );
+
+            document.querySelector("[name=all]").addEventListener(
+                "click",
+                function () {
+                    let hobbies = document.querySelectorAll("[name=hobby]");
+                    hobbies.forEach((e) => (e.checked = event.target.checked));
+                    document.querySelector("#span").innerText = event.target
+                        .checked
+                        ? "전체해지"
+                        : "전체선택";
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>

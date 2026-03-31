@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body,
+      html {
+        height: 100%;
+      } */
+      .outer {
+        background-color: skyblue;
+        width: 50vw;
+        height: 50vh;
+        font-size: 32px;
+      }
+
+      .a {
+        background-color: red;
+        font-size: 1em;
+      }
+      .b {
+        background-color: green;
+        font-size: 1rem;
+      }
+      .c {
+        background-color: blue;
+        font-size: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 단위 : px vs em vs rem -->
+    <div class="outer">
+      단위 : px vs em vs rem
+      <div class="a">em: 부모노드를 기준으로..</div>
+      <div class="b">rem: 루트노드를 기준으로..</div>
+      <div class="c">px: 헤상도를 기준으로..</div>
+    </div>
+  </body>
+</html>

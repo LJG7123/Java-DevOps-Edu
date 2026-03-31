@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  background-color: lightcyan;
+  justify-content: center;
+}
+
+nav img {
+  height: 50px;
+}
+
+nav ul {
+  margin: 0px;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  font-weight: bold;
+}

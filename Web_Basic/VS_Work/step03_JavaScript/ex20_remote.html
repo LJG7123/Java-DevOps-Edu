@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="EUC-KR" />
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <a href="#" data-url="naver.com">네이버</a>
+        <p></p>
+        <a href="#" data-url="daum.net">다음</a>
+        <p></p>
+        <a href="#" data-url="kosta.or.kr">코스타</a>
+        <p></p>
+
+        <script>
+            document.querySelectorAll("a").forEach((a) => {
+                a.onclick = function () {
+                    opener.location.href = "https://www." + a.dataset.url;
+                };
+            });
+        </script>
+    </body>
+</html>

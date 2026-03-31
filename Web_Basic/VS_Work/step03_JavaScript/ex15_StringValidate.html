@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="form">
+            ID : <input type="text" name="id" /><span id="idSpan"></span>
+            <p>age : <input type="text" name="age" /><span></span></p>
+            <p>email : <input type="text" name="email" /> <span></span></p>
+            <p></p>
+
+            <fieldset>
+                <legend>주민번호</legend>
+                <input type="text" size="6" name="jumin1" /> -
+                <input type="text" size="7" name="jumin2" /><span></span>
+                <p>
+                    성별 :
+                    <input type="radio" name="gender" value="남자" />남자
+                    <input type="radio" name="gender" value="여자" />여자
+                </p>
+            </fieldset>
+        </form>
+
+        <script>
+            // id에 영문만 가능 (blur 이벤트)
+            document.querySelector("[name=id]").addEventListener(
+                "blur",
+                () => {
+                    event.target.style.border = "solid 1px gray";
+
+                    let data = "qwertyuiopasdfghjklzxcvbnm";
+
+                    let value = event.target.value;
+                    for (let i = 0; i < value.length; i++) {
+                        let ch = value.charAt(i);
+                        // console.log(ch);
+                        if (data.indexOf(ch.toLocaleLowerCase()) === -1) {
+                            document.querySelector("#idSpan").innerHTML =
+                                "<strong style='color:red'>아이디는 영문만 가능합니다.</strong>";
+                            return;
+                        }
+                    }
+                },
+                false,
+            );
+
+            document.querySelector("[name=id]").addEventListener(
+                "focus",
+                () => {
+                    event.target.style.border = "double 5px red";
+                    document.querySelector("#idSpan").innerHTML = "";
+                },
+                false,
+            );
+
+            document.querySelector("[name=age]").addEventListener(
+                "blur",
+                () => {
+                    numberCheck(event.target);
+                },
+                false,
+            );
+
+            const numberCheck = (objEle) => {
+                if (isNaN(objEle.value)) {
+                    objEle.nextElementSibling.innerHTML =
+                        "<strong style='color:red'>숫자만 가능합니다.</strong>";
+                    objEle.focus();
+                    objEle.value = "";
+                    return true;
+                } else {
+                    objEle.nextElementSibling.innerHTML = "";
+                    return false;
+                }
+            };
+
+            // 이메일 @ 체크
+
+            // 주민번호
+            document.querySelector("[name=jumin1]").addEventListener(
+                "input",
+                () => {
+                    let str = event.target.value;
+                    if (isNaN(str)) {
+                        event.target.value = str.substring(0, str.length - 1);
+                        return;
+                    }
+
+                    if (str.length === 6) {
+                        event.target.nextElementSibling.focus();
+                    }
+                },
+                false,
+            );
+            document.querySelector("[name=jumin2]").addEventListener(
+                "blur",
+                () => {
+                    // 뒷자리 입력 후 숫자 체크 + 성별 체크
+                    let result = numberCheck(event.target);
+
+                    if (!result) {
+                        let str = event.target.value;
+                        let genderEles =
+                            document.querySelectorAll("[name=gender]");
+                        if ("13".includes(str.charAt(0))) {
+                            genderEles[0].checked = true;
+                        } else {
+                            genderEles[1].checked = true;
+                        }
+                    }
+                },
+                false,
+            );
+        </script>
+    </body>
+</html>

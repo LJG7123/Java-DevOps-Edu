@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Destructuring - 구조분해 할당</h1>
+		<!-- 객체{}나 배열[]의 값을 쉽게 꺼내어 변수에 할당할 수 있도록 하는 문법 -->
+		<script>
+			const emp = { empno: 10, ename: "hee", job: "teacher" };
+			{
+				// emp객체에 있는 속성의 값을 변수에 담고 싶다 - 기존방식
+				let empno = emp.empno;
+				let ename = emp.ename;
+				let job = emp.job;
+
+				console.log(empno, ename, job);
+			}
+
+			{
+				// 새로운 문법 - 구조분해 할당
+				let { empno, ename, job } = emp;
+				console.log(empno, ename, job);
+			}
+
+			{
+				// 없는 속성값 - 기본값 설정
+				// 없는 속성은 undefined 인데 기본값 설정하면 기본값
+				// 있는 속성에 기본값 설정해도 기본값이 아닌 객체에 있는 값이 할당
+				let { empno, job = "student", age = 20 } = emp;
+				console.log(empno, job, age);
+			}
+
+			{
+				// key와 변수 이름이 다른 경우
+				let { empno: no, job, age = 20 } = emp;
+				console.log(no, job, age);
+			}
+
+			////// 배열 //////
+			const jobs = ["학생", "강사"];
+			{
+				// 기존 방식
+				let first = jobs[0];
+				let second = jobs[1];
+
+				console.log(first, second);
+			}
+
+			{
+				// 구조분해 할당
+				let [first, second] = jobs;
+				console.log(first, second);
+			}
+
+			const numbers = [10, 20, 30, 40, 50, 60, 70];
+			{
+				let [a, b, c] = numbers;
+				console.log(a, b, c);
+			}
+
+			{
+				let [, a, , b, , , c] = numbers;
+				console.log(a, b, c);
+			}
+
+			// a와 b의 값을 교환
+			{
+				let a = 5;
+				let b = 3;
+				let tmp = a;
+				a = b;
+				b = tmp;
+				console.log(a, b);
+			}
+
+			{
+				let a = 5;
+				let b = 3;
+
+				[b, a] = [a, b];
+				console.log(a, b);
+			}
+
+			// 함수가 리턴하는 값을 구조분해 할당으로 받기
+			{
+				const test = function () {
+					// 기능
+					return [10, 20, 30];
+				};
+				let result = test();
+				console.log(result);
+
+				let [a, , b] = test();
+				console.log(a, b);
+
+				const test2 = function () {
+					// 기능
+					return { name: "미미", age: 20, addr: "서울" };
+				};
+
+				result = test2();
+				console.log(result.name, result.age, result.addr);
+
+				let { addr, name, age } = test2();
+				console.log(name, age, addr);
+
+				///////////////////단축 속성명////////////////////
+				{
+					let name = "hee";
+					let age = 20;
+					let addr = "제주";
+
+					// 객체
+					let person = { name: name, age: age, addr: addr };
+					let person2 = { name, age, addr };
+
+					console.log(person);
+					console.log(person2);
+				}
+			}
+		</script>
+	</body>
+</html>
