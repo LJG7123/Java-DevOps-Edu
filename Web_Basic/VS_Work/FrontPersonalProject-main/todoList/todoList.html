@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" type="text/css" href="./css/App.css">
+    <link rel="stylesheet" type="text/css" href="./css/Header.css">
+    <link rel="stylesheet" type="text/css" href="./css/List.css">
+    <link rel="stylesheet" type="text/css" href="./css/TodoItem.css">
+    <link rel="stylesheet" type="text/css" href="./css/Editor.css">
+
+    
+</head>
+<body> 
+ <div class="App">
+    <div class="Header">
+        <h3>오늘의 Plan😊</h3>
+        <h1>2025-10-20</h1>
+    </div>
+    
+  <form>
+    <div class="Editor">
+            <input type="text" placeholder='새로운 todo'  id="input" />
+            <button>추가</button> 
+    </div>
+  </form>   
+
+    <div class="List">
+        <h4>Todo List 🌱</h4> <!--widow + .-->
+        <input type="text" placeholder='검색어를 입력해주세요.' id="keyword" />
+
+       
+            <div class="todos_wrapper">
+                <!--여기에 화면 출력-->
+            </div>
+       
+    </div>  
+   
+</div>
+
+<script src="js/basic.js"></script>
+
+</body>
+</html>
