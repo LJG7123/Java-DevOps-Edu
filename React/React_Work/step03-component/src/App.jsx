@@ -1,11 +1,11 @@
 import "./App.css";
-import "./components/Ex04_TripTest.css";
 import A, { Ex01_Export2, num } from "./components/Ex01_Export";
 import Ex02_Library from "./components/Ex02_Library";
 import Ex03_ButtonTest from "./components/Ex03_ButtonTest";
 import Ex04_Article from "./components/Ex04_Article";
 import Ex04_Header from "./components/Ex04_Header";
 import Ex04_Nav from "./components/Ex04_Nav";
+import Ex04_TripTest from "./components/Ex04_TripTest";
 import Ex05_Product from "./components/Ex05_Product";
 
 // 컴포넌트 작성
@@ -44,13 +44,7 @@ function App() {
 			{/* 3. Button 연습 - img처리 */}
 			{/* <Ex03_ButtonTest /> */}
 
-			<Ex04_Header title="Trip" />
-			<Ex04_Nav />
-			<Ex04_Article
-				title="태어난 김에 세계일주"
-				body="올 여름 최고의 찬스"
-			/>
-
+			<Ex04_TripTest />
 			<hr />
 			<Ex05_Product />
 		</>
