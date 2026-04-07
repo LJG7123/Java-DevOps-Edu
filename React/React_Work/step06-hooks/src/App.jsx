@@ -5,6 +5,7 @@ import Ex03_Memo from "./components/Ex03_Memo";
 import Ex04_Ref from "./components/Ex04_Ref";
 import Ex05_Ref from "./components/Ex05_Ref";
 import Ex06_Ref from "./components/Ex06_Ref";
+import Ex08_Context01 from "./components/Ex08_Context01";
 import UseEffect_UseRef from "./components/UseEffect_UseRef";
 import UseEffect_UseState from "./components/UseEffect_UseState";
 
@@ -35,7 +36,10 @@ function App() {
 			<Ex06_Ref /> */}
 
 			{/* <UseEffect_UseState /> */}
-			<UseEffect_UseRef />
+			{/* <UseEffect_UseRef /> */}
+
+			{/* 8. useContext 사용하기 */}
+			<Ex08_Context01 />
 		</>
 	);
 }

@@ -17,8 +17,8 @@ function CommentList() {
 	];
 	return (
 		<>
-			{comments.map((comment) => (
-				<Comment {...comment}></Comment>
+			{comments.map((comment, idx) => (
+				<Comment {...comment} key={idx}></Comment>
 			))}
 		</>
 	);
