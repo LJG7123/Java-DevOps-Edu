@@ -25,7 +25,7 @@ const mockData = [
 	{ id: 2, isDone: false, content: "낮잠자기", date: new Date().getTime() },
 ];
 
-const reducer = (state, action) => {
+function reducer(state, action) {
 	switch (action.type) {
 		case "CREATE":
 			return [action.data, ...state];
@@ -40,7 +40,7 @@ const reducer = (state, action) => {
 		default:
 			return state;
 	}
-};
+}
 
 function App() {
 	// const [todos, setTodos] = useState(mockData);
@@ -51,7 +51,7 @@ function App() {
 		dispatch({
 			type: "CREATE",
 			data: {
-				id: ++idRef.current,
+				id: idRef.current++,
 				isDone: false,
 				content: content,
 				date: new Date().getTime(),
@@ -95,13 +95,15 @@ function App() {
 
 	return (
 		<>
-			<Header />
-			<TodoStateContext value={todos}>
-				<TodoDispatchContext value={memoizedDispatch}>
-					<Editor />
-					<List />
-				</TodoDispatchContext>
-			</TodoStateContext>
+			<div className="App">
+				<Header />
+				<TodoStateContext value={todos}>
+					<TodoDispatchContext value={memoizedDispatch}>
+						<Editor />
+						<List />
+					</TodoDispatchContext>
+				</TodoStateContext>
+			</div>
 		</>
 	);
 }

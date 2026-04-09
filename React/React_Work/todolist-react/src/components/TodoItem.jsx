@@ -3,14 +3,8 @@ import "./TodoItem.css";
 import { TodoDispatchContext } from "../App";
 
 function TodoItem({ id, isDone, content, date }) {
+	console.log("TodoItem()");
 	const { onUpdate, onDelete } = use(TodoDispatchContext);
-	const onChangeCheckbox = () => {
-		onUpdate(id);
-	};
-
-	const onButtonClicked = () => {
-		onDelete(id);
-	};
 
 	return (
 		<>
@@ -18,11 +12,11 @@ function TodoItem({ id, isDone, content, date }) {
 				<input
 					type="checkbox"
 					checked={isDone}
-					onChange={onChangeCheckbox}
+					onChange={() => onUpdate(id)}
 				/>
 				<div className="content">{content}</div>
 				<div className="date">{new Date(date).toLocaleString()}</div>
-				<button onClick={onButtonClicked}>삭제</button>
+				<button onClick={() => onDelete(id)}>삭제</button>
 			</div>
 		</>
 	);

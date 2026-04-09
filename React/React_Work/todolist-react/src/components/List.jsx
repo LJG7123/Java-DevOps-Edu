@@ -4,16 +4,15 @@ import TodoItem from "./TodoItem";
 import { TodoStateContext } from "../App";
 
 function List() {
+	console.log("List()");
 	const [search, setSearch] = useState("");
 	const todos = use(TodoStateContext);
 	const getFiltered = () => {
 		if (search === "") return todos;
 
-		const searched = todos.filter((todo) =>
+		return todos.filter((todo) =>
 			todo.content.toLowerCase().includes(search.toLowerCase()),
 		);
-
-		return searched;
 	};
 
 	const filteredTodos = getFiltered();

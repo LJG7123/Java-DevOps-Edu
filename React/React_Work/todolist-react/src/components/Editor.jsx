@@ -1,11 +1,14 @@
-import { use, useRef, useState } from "react";
+import { memo, use, useEffect, useRef, useState } from "react";
 import "./Editor.css";
 import { TodoDispatchContext } from "../App";
 
 function Editor() {
+	console.log("Editor()");
 	const [content, setContent] = useState("");
 	const contentRef = useRef();
 	const { onCreate } = use(TodoDispatchContext);
+
+	useEffect(() => contentRef.current.focus(), []); // 처음 마운트 될 때 focus
 
 	const onSubmit = () => {
 		if (content === "") {
@@ -40,4 +43,4 @@ function Editor() {
 	);
 }
 
-export default Editor;
+export default memo(Editor);
