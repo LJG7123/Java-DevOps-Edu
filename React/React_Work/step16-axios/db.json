@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello React"
+    },
+    {
+      "id": "2",
+      "title": "Axios Test"
+    },
+    {
+      "title": "Post Test",
+      "id": "VTCYATurC5Q"
+    },
+    {
+      "title": "Post Test",
+      "id": "_3d1GC00oDM"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "이정건",
+      "email": "ljg7123@naver.com",
+      "age": 29
+    },
+    {
+      "name": "새이름",
+      "age": 22,
+      "addr": "new addr",
+      "id": "2"
+    },
+    {
+      "name": "new user",
+      "email": "new@test.com",
+      "age": 20,
+      "id": "28C2ZhsP7to"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
