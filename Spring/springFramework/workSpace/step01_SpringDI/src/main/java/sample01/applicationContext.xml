@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- 객체생성 -->
+   <bean class="sample01.MessageBeanEnImpl" id="en"/>
+   
+   <!-- scope="prototype" 설정하면 사전초기화 하지 않고 필요할때 getBean할때마다 새로운 객체 만든다. -->
+   <bean class="sample01.MessageBeanKoImpl" id="ko" scope="prototype"/>
+
+</beans>

@@ -1,0 +1,24 @@
+package sample08;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class BookDTO {
+	@Value("Spring")
+	private String subject;
+	
+	@Value("LJG")
+	private String writer;
+	
+	@Value("25000")
+	private int price;
+	
+	@Value("2026-05-08")
+  	private String date;
+  
+}

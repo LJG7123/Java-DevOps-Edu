@@ -1,0 +1,12 @@
+package sample08;
+
+import lombok.RequiredArgsConstructor;
+
+
+public class BookDTO {
+  private String subject;
+  private String writer;
+  private int price;
+  private String date;
+  
+}

@@ -1,0 +1,28 @@
+package kosta.advice;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class TimerAdvice {
+	/**
+	 * 공통기능(부가기능)
+	 * : around방식(사전처리, 사후처리)
+	 * : 기능
+	 * 		사전의 현재시간을 구한다.
+	 * 		사후에 현재시간 구해서 사후 - 사전. 핵심기능을 실행한 실행시간을 측정
+	 * 		
+	 * 		@param : ProceedingJoinPoint - JoinPoint라는 객체를 상속받은 객체
+	 */
+	public Object around(ProceedingJoinPoint joinPoint) {
+		// 사전처리
+		
+		try {
+			Object obj = joinPoint.proceed(); // 다음 advice or target method를 호출한다.
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		// 사후처리
+		
+		return obj;
+	}
+}

@@ -1,0 +1,20 @@
+package sample08;
+
+
+
+public class BookDAOImpl implements BookDAO {
+    
+	
+	private  DbUtil dbUtil;
+    
+	@Override
+	public void save(EmailSender emailSender, MessageSender messageSender, BookDTO book1, BookDTO book2) {
+		System.out.println(emailSender);
+		System.out.println(messageSender);
+		System.out.println(book1);
+		System.out.println(book2);
+		System.out.println(dbUtil);
+
+	}
+
+}
