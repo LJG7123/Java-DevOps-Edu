@@ -1,0 +1,31 @@
+# 모든 디렉토리 허용안하기
+/**
+
+# .gitignore 파일은 열어준다
+!.gitignore
+
+# java 디렉토리는 열어준다
+!/java/
+
+# java/work 디렉토리는 열어준다
+!/java/work/
+
+# java/work/ 하위 프로젝트 디렉토리는 열어준다
+!/java/work/*/
+
+# 각 프로젝트의 src 디렉토리 허용
+!/java/work/*/src/
+!/java/work/*/src/**
+
+!/Web_Basic/
+!/Web_Basic/VS_Work/
+!/Web_Basic/VS_Work/**
+/Web_Basic/VS_Work/.vscode/
+
+!/React/
+!/React/React_Work/
+!/React/React_Work/**
+/React/React_Work/ljg7123.github.io
+/React/React_Work/ljg7123.github.io/**
+
+/Java/work/Pcafe-Kiosk
