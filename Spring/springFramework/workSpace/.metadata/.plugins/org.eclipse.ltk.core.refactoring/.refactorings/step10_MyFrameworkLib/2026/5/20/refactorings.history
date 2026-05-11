@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;step10_MyFrameworkLib&apos;&#x0D;&#x0A;- Original project: &apos;step10_MyFrameworkLib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     web.mvc.controller.Controller.java&#x0D;&#x0A;     web.mvc.controller.DispatcherServlet.java&#x0D;&#x0A;     web.mvc.controller.HandlerMapping.java&#x0D;&#x0A;     web.mvc.controller.ModelAndView.java" description="Delete elements" element1="/src\/main\/java&lt;web.mvc.controller{ModelAndView.java" element2="/src\/main\/java&lt;web.mvc.controller{DispatcherServlet.java" element3="/src\/main\/java&lt;web.mvc.controller{Controller.java" element4="/src\/main\/java&lt;web.mvc.controller{HandlerMapping.java" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1778485584945" subPackages="false" version="1.0"/>
+</session>

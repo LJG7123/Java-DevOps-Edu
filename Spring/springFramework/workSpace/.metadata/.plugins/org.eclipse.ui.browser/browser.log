@@ -1,0 +1,14 @@
+
+5월 11, 2026 11:18:32.662 NEW SESSION
+5월 11, 2026 11:18:32.662 Created TensorFlow Lite XNNPACK delegate for CPU.
+5월 11, 2026 11:18:34.842 [21924:26640:0511/111834.842:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:19:00.797 [21924:26640:0511/111900.797:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:19:44.509 [21924:26640:0511/111944.508:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:21:21.423 [21924:26640:0511/112121.423:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:24:19.680 [21924:26640:0511/112419.680:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:31:40.246 [21924:26640:0511/113140.246:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+5월 11, 2026 11:52:23.603 [21924:22648:0511/115223.603:ERROR:components\device_event_log\device_event_log_impl.cc:202] [11:52:23.603] USB: usb_service_win.cc:108 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+5월 11, 2026 13:52:35.745 [21924:22648:0511/135235.745:ERROR:components\device_event_log\device_event_log_impl.cc:202] [13:52:35.747] USB: usb_service_win.cc:108 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+5월 11, 2026 15:19:04.358 [21924:22648:0511/151904.358:ERROR:components\device_event_log\device_event_log_impl.cc:202] [15:19:04.346] USB: usb_service_win.cc:108 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+5월 11, 2026 15:19:04.368 [21924:22648:0511/151904.368:ERROR:components\device_event_log\device_event_log_impl.cc:202] [15:19:04.368] USB: usb_service_win.cc:108 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+5월 11, 2026 15:19:04.373 [21924:22648:0511/151904.373:ERROR:components\device_event_log\device_event_log_impl.cc:202] [15:19:04.373] USB: usb_service_win.cc:311 SetupDiEnumDeviceInterfaces: �궗�슜 媛��뒫�븳 �뜲�씠�꽣媛� �뾾�뒿�땲�떎. (0x103)

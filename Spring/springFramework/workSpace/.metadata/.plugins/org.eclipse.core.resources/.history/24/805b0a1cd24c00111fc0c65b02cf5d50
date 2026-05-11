@@ -1,0 +1,21 @@
+package kosta.advice;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.util.StopWatch;
+
+public class AroundAdvice {
+	
+	public void around(ProceedingJoinPoint jp) throws Throwable {
+		StopWatch sw = new StopWatch();
+		sw.start();
+		
+		Object obj = jp.proceed();
+		
+		sw.stop();
+		
+		System.out.print(jp.getSignature().getName() + " 호출");
+		System.out.print(" / 인수 개수 : " + jp.getArgs().length);
+		System.out.print(" / 리턴값 : " + obj);
+		System.out.println(" / 총 실행 시간 : " + sw.getLastTaskTimeMillis() + "ms");
+	}
+}
