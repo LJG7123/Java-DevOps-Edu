@@ -1,0 +1,18 @@
+package kosta.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/rem")
+public class RequestMappingController {
+	/**
+	 * 
+	 * @return : String을 리턴하면 viewName이 된다
+	 */
+	@RequestMapping("/a.do")
+	public String aaa() {
+		System.out.println("RequestMappingController a.do 요청됨");
+		return "result"; // WEB-INF/view/result.jsp
+	}
+}

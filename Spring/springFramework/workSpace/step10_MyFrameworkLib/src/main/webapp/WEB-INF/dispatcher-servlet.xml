@@ -7,8 +7,7 @@
 	 2. 내가 작성한(User Definition Component) 컴포넌트도 여기다 등록
 -->
 <!-- 	HandlerMapping을 등록 -->
-<bean id="handlerMapping" 
-class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
 
 <!--  viewResolver 등록-->
 <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

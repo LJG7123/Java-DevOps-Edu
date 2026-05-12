@@ -1,0 +1,22 @@
+package kosta.web.exception;
+
+import java.text.NumberFormat;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
+
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 프로젝트 전역에서 발생하는 예외를 처리하는 클래스
+ */
+@ControllerAdvice
+@Slf4j
+public class GlobalExceptionAdvice {
+	
+	@ExceptionHandler(value= {NumberFormatException.class})
+	public ModelAndView error(NumberFormatException e) {
+		
+	}
+}

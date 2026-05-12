@@ -17,7 +17,7 @@ public class InsertController implements Controller {
 		//등록하기
 		System.out.println("InsertController 입니다. ");
 		
-		return new ModelAndView("index");//redirect방식으로 이동해라.
+		return new ModelAndView("index");
 	}
 
 }
