@@ -1,0 +1,8 @@
+package kosta.web.dto;
+
+public class ProductDTO {
+	private String code;
+	private String name;
+	private int price;
+	private String detail;
+}

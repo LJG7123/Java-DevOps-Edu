@@ -1,0 +1,5 @@
+package kosta.web.controller;
+
+public class ResponseBodyController {
+
+}

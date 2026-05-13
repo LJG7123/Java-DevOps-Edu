@@ -1,0 +1,49 @@
+package web.mvc.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import lombok.RequiredArgsConstructor;
+import web.mvc.dto.ProductDTO;
+import web.mvc.exception.ErrorCode;
+import web.mvc.exception.MyErrorException;
+
+@RequiredArgsConstructor
+@Repository
+public class ProductDAOImpl implements ProductDAO {
+
+	private final List<ProductDTO> productList;
+	
+	@Override
+	public List<ProductDTO> select() {
+		return productList;
+	}
+
+	@Override
+	public int insert(ProductDTO productDTO) throws MyErrorException {
+		if (productList.stream().filter(p -> p.getCode().equals(productDTO.getCode()))) throw new MyErrorException(ErrorCode.DUPLICATE_PRODUCT_CODE);
+		
+		productList.add(productDTO);
+		return 0;
+	}
+
+	@Override
+	public int delete(String code) throws MyErrorException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ProductDTO selectByCode(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

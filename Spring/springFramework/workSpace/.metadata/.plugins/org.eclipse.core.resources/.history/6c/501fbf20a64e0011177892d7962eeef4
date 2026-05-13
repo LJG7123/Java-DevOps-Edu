@@ -1,0 +1,72 @@
+package web.mvc.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import web.mvc.dto.ProductDTO;
+import web.mvc.service.ProductService;
+
+@RequiredArgsConstructor
+@Controller
+@Slf4j
+public class ProductController {
+	private final ProductService service;
+	
+	@RequestMapping("/")
+	public ModelAndView productList() {
+		List<ProductDTO> productList = service.select();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("productList");
+		mv.addObject("productList", productList);
+		
+		return mv;
+	}
+	
+	@GetMapping("/insertForm")
+	public String insertForm() {
+		return "insertForm";
+	}
+	
+	@PostMapping("/products")
+	public ModelAndView insertProduct(ProductDTO product) {
+		log.info("product = {}", product);
+		
+		service.insert(product);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/");
+		
+		return mv;
+	}
+	
+	@GetMapping("/read")
+	public ModelAndView getProduct(String code) {
+		ProductDTO product = service.selectByCode(code);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("read");
+		mv.addObject("product", product);
+		
+		return mv;
+	}
+	
+	@GetMapping("/del/{code}")
+	public ModelAndView deleteProduct(@PathVariable String code) {
+		service.delete(code);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/");
+		
+		return mv;
+	}
+}

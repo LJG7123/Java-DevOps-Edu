@@ -1,0 +1,5 @@
+package kosta.web.dto;
+
+public class ResponseDTO {
+
+}

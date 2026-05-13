@@ -1,0 +1,39 @@
+package kosta.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+public class PathVariableController {
+	
+	@RequestMapping("/{type}/{id}.do")
+	public void aa(@PathVariable String type, @PathVariable("id") String userId) {
+		log.info("aa 메소드 호출됨..");
+		log.info("type={}, id={}", type, userId);
+	}
+	
+	@RequestMapping("/{id}")
+	public void bb(@PathVariable String id) {
+		log.info("bb 메소드 호출됨..");
+		log.info("id={}", id);
+	}
+	
+	@RequestMapping("/{type}/{category}/{no}")
+	public String cc(@PathVariable String type, @PathVariable String category, @PathVariable("no") int pathNo) {
+		log.info("cc 메소드 호출됨.. type={}", type);
+		log.info("category={}, no={}", category, pathNo);
+		
+		/**
+		 * 기능을 완료한 후에 다른 Controller를 실행하고 싶다
+		 * => viewName에 
+		 * 1) redirect:url주소 
+		 * 2) forward:url주소
+		 */
+		
+		return "rem/a.do";
+	}
+}

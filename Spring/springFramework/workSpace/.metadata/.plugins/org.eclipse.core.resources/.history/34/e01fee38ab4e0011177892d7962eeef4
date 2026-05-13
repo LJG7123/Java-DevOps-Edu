@@ -1,0 +1,76 @@
+package web.mvc.controller;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import web.mvc.dto.ProductDTO;
+import web.mvc.service.ProductService;
+
+@RequiredArgsConstructor
+@RestController
+@Slf4j
+public class ProductController {
+	private final ProductService service;
+	
+	@GetMapping("/products")
+	public ResponseEntity<?> productList() {
+		List<ProductDTO> productList = service.select();
+		
+		return ResponseEntity.ok(productList);
+	}
+	
+	@PostMapping("/products")
+	public ModelAndView insertProduct(ProductDTO product) {
+		log.info("product = {}", product);
+		
+		service.insert(product);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/");
+		
+		return mv;
+	}
+	
+	@GetMapping("/read")
+	public ModelAndView getProduct(String code) {
+		ProductDTO product = service.selectByCode(code);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("read");
+		mv.addObject("product", product);
+		
+		return mv;
+	}
+	
+	@GetMapping("/del/{code}")
+	public ModelAndView deleteProduct(@PathVariable String code) {
+		service.delete(code);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/");
+		
+		return mv;
+	}
+	
+	@GetMapping("/updateForm/{code}")
+	public ModelAndView updateForm(@PathVariable String code) {
+		ProductDTO product = service.selectByCode(code);
+		
+		return new ModelAndView("updateForm", "product", product);
+	}
+	
+	@PostMapping("/products/{code}")
+	public ModelAndView updateProduct(@PathVariable String code, ProductDTO product) {
+		service.updateByCode(product);
+		
+		return new ModelAndView("redirect:/read", "code", code);
+	}
+}

@@ -25,7 +25,7 @@ public class ParameterController {
 	public String test(String name, Integer age) { // 없으면 null, 있으면 값으로 대응
 		log.info("ParameterController a.do 요청..");
 		log.info("name = {}, age = {}", name, age);
-				
+		
 		return "result";
 	}
 	

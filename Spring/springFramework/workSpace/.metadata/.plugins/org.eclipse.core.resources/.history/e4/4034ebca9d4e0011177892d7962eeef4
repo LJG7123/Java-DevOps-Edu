@@ -1,0 +1,45 @@
+package web.mvc.dao;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import web.mvc.dto.ProductDTO;
+import web.mvc.exception.MyErrorException;
+
+@Repository
+public class ProductDAOImpl implements ProductDAO {
+
+	private List<ProductDTO> productList = Arrays.asList(new ProductDTO("A01", "새우깡", 2000, "짜고 고소하다."));
+	
+	@Override
+	public List<ProductDTO> select() {
+		return productList;
+	}
+
+	@Override
+	public int insert(ProductDTO productDTO) throws MyErrorException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(String code) throws MyErrorException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ProductDTO selectByCode(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

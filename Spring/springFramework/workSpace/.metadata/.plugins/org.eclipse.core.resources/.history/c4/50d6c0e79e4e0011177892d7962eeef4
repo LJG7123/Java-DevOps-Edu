@@ -1,0 +1,14 @@
+package web.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+
+import lombok.RequiredArgsConstructor;
+import web.mvc.service.ProductService;
+
+@RequiredArgsConstructor
+@Controller
+public class ProductController {
+	private final ProductService service;
+	
+	
+}
