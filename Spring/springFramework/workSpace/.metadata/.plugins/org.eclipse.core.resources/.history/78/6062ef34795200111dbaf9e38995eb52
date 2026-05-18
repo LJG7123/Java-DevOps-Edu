@@ -1,0 +1,37 @@
+package kosta.entity;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+// JPA가 관리하는 객체
+@Entity
+@Table(name = "cus")
+public class Customer {
+	@Id // pk대상
+	private Long id;
+	
+	@Column(name = "user_name", unique = true, length = 30)
+	private String userName;
+	
+	@Column(name = "user_age", nullable = true)
+	private int age;
+	
+//	@Transient // DB의 컬럼으로 관리되지 않는다.
+	private String addr;
+	
+	// 등록일
+	@CreationTimestamp
+	private LocalDateTime insertDate;
+	
+	// 수정일
+	@UpdateTimestamp
+	private LocalDateTime updateDate;
+}

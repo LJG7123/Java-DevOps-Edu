@@ -1,0 +1,5 @@
+package kosta.entity;
+
+public class Employee {
+
+}

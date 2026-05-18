@@ -12,7 +12,7 @@ public class GlobalExceptionAdvice {
 
 	@ExceptionHandler({MyErrorException.class})
 	public ModelAndView error(MyErrorException e) {
-		log.info("[ERROR] " + e.getMessage());
+		log.info("[ERROR] " + e.getErrorCode().getMsg());
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("error");

@@ -1,7 +1,0 @@
-package sample08;
-
-import org.springframework.stereotype.Component;
-
-public class EmailSender {
-
-}

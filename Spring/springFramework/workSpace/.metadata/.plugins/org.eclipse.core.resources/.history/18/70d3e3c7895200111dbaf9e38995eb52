@@ -1,0 +1,65 @@
+package kosta.main;
+
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import kosta.entity.Customer;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		System.out.println("===JPA 시작합니다.===");
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAProject");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction ex = em.getTransaction();
+		
+		ex.begin();
+		
+		// 등록
+		//em.persist(Customer.builder().userName("ljg").age(20).birthDay(new Date()).addr("서울").build());
+		em.persist(Customer.builder().userName("삼순").build());
+		
+		/*Customer cu1 = Customer.builder().userName("미미2").age(30).birthDay(new Date()).addr("대전").build();
+		Customer cu2 = Customer.builder().userName("나영2").age(25).birthDay(new Date()).addr("서울").build();
+		Customer cu3 = Customer.builder().userName("효리2").age(22).birthDay(new Date()).addr("제주").build();
+		
+		em.persist(cu1);
+		em.persist(cu2);
+		em.persist(cu3);*/
+		
+		// 조회
+		/*Customer cu = em.find(Customer.class, 2L);
+		System.out.println("cu = " + cu);
+		
+		Customer cu2 = em.find(Customer.class, 2L);
+		System.out.println("cu = " + cu2);
+		
+		Customer cu3 = em.find(Customer.class, 3L);
+		System.out.println("cu = " + cu3);*/
+		
+		// 수정
+		/*Customer cu = em.find(Customer.class, 2L);
+		System.out.println("cu = " + cu);
+		cu.setAddr("대구2");
+		cu.setAge(30);*/
+		
+		System.out.println("----------END1----------");
+		
+		ex.commit();
+		
+		System.out.println("----------END2----------");
+		
+		
+		
+		em.close();
+		emf.close();
+		System.out.println("===JPA 끝.===");
+
+	}
+
+}

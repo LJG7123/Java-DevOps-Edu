@@ -1,0 +1,14 @@
+package kosta.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+// JPA가 관리하는 객체
+@Entity
+public class Customer {
+	@Id // pk대상
+	private Long id;
+	private String userName;
+	private int age;
+	private String addr;
+}

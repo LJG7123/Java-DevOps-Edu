@@ -1,0 +1,5 @@
+package kosta.admin.controller;
+
+public class AdminController {
+
+}

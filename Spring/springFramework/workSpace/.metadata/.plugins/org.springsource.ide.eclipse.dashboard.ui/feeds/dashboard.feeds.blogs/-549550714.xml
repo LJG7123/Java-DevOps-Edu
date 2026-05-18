@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 May 2026 07:02:18 GMT</lastBuildDate><item><title><![CDATA[This Week in Spring - May 12th, 2026 ]]></title><link>https://spring.io/blog/2026/05/12/this-week-in-spring-may-12-2026</link><guid isPermaLink="true">https://spring.io/blog/2026/05/12/this-week-in-spring-may-12-2026</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans!  As I write this I am in Miami, FL at the CodeRemix.ai show, focused on the wide and wonderful world of OpenRewrite and Moderne. I&apos;ve got a talk to give so let&apos;s dive right into it!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 May 2026 07:19:12 GMT</lastBuildDate><item><title><![CDATA[A Bootiful Podcast: the legendary Adib Saikali]]></title><link>https://spring.io/blog/2026/05/14/a-bootiful-podcast-daniel-adib-saikali</link><guid isPermaLink="true">https://spring.io/blog/2026/05/14/a-bootiful-podcast-daniel-adib-saikali</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! I&apos;m so thrilled to have been able to sit down and talk to my friend Adib Saikali!&lt;/p&gt;
+&lt;iframe title=&quot;the legendary Adib Saikali on AI, the power of the platform, and more&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=nj5fs-1ac3ce0-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[This Week in Spring - May 12th, 2026 ]]></title><link>https://spring.io/blog/2026/05/12/this-week-in-spring-may-12-2026</link><guid isPermaLink="true">https://spring.io/blog/2026/05/12/this-week-in-spring-may-12-2026</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans!  As I write this I am in Miami, FL at the CodeRemix.ai show, focused on the wide and wonderful world of OpenRewrite and Moderne. I&apos;ve got a talk to give so let&apos;s dive right into it!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a quick note about the &lt;a href=&quot;https://spring.io/blog/2026/05/11/may-train-shift&quot;&gt;upcoming release train dates&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;in last week&apos;s installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked to the legendary Daniel Garnier-Moiroux about his new book &lt;a href=&quot;https://spring.io/blog/2026/05/07/a-bootiful-podcast-daniel-garnier-moiroux&quot;&gt;&lt;em&gt;Testing Spring Boot Applications&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
@@ -15,34 +16,4 @@
 &lt;p&gt;&lt;strong&gt;Show Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.vmware.com/products/app-platform/tanzu-spring&quot;&gt;Enterprise Support&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring Cloud Function and Config Have Been Released To Address Several CVEs]]></title><link>https://spring.io/blog/2026/05/08/spring-cloud-april-releases</link><guid isPermaLink="true">https://spring.io/blog/2026/05/08/spring-cloud-april-releases</guid><dc:creator><![CDATA[ryanjbaxter]]></dc:creator><pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the Spring Cloud team and everyone who has contributed, I am pleased to announce the following releases of Spring Cloud Function and Spring Cloud Config:&lt;/p&gt;
-&lt;h3 id=&quot;spring-cloud-config&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-config&quot; aria-label=&quot;spring cloud config permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;5.0.3&lt;/code&gt; (OSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.3.3&lt;/code&gt; (OSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.2.7&lt;/code&gt; (Enterprise Only)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.1.10&lt;/code&gt; (Enterprise Only)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;3.1.13&lt;/code&gt; (Enterprise Only)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The above releases address contain fixes for the following CVEs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-40982&quot;&gt;CVE-2026-40982&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-40981&quot;&gt;CVE-2026-40981&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-41002&quot;&gt;CVE-2026-41002&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-41004&quot;&gt;CVE-2026-41004&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;spring-cloud-function&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-function&quot; aria-label=&quot;spring cloud function permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Function&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;5.0.2&lt;/code&gt; (OSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.3.3&lt;/code&gt; (OSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.1.10&lt;/code&gt; (Enterprise Only)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;4.2.6&lt;/code&gt; (Enterprise Only)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;3.2.16&lt;/code&gt;(Enterprise Only)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The above releases address contain fixes for the following CVEs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-40989&quot;&gt;CVE-2026-40989&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/security/cve-2026-40990&quot;&gt;CVE-2026-40990&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Please refer to the &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-config/releases&quot;&gt;releases page&lt;/a&gt; for more details.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-cloud-config/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-config&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-config/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-cloud-config/reference/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>

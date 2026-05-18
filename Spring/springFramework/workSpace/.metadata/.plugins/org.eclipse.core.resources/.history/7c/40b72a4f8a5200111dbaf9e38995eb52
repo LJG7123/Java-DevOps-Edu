@@ -1,0 +1,62 @@
+package kosta.entity;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+// JPA가 관리하는 객체
+@Entity
+@Table(name = "cus")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
+@Setter
+@DynamicUpdate
+@DynamicInsert
+public class Customer {
+	@Id // pk대상
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // 쓰기 지연 안됨
+	private Long id;
+	
+	@Column(name = "user_name", unique = true, length = 30)
+	private String userName;
+	
+	@Column(name = "user_age", nullable = true)
+	private int age;
+	
+//	@Transient // DB의 컬럼으로 관리되지 않는다.
+	private String addr;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date birthDay;
+	
+	// 등록일
+	@CreationTimestamp
+	private LocalDateTime insertDate;
+	
+	// 수정일
+	@UpdateTimestamp
+	private LocalDateTime updateDate;
+}

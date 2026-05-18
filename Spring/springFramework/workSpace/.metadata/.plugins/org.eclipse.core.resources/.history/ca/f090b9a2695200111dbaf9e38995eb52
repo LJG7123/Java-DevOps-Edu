@@ -1,0 +1,11 @@
+package kosta.ㅡ먀ㅜ;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		System.out.println("===JPA 시작합니다.===");
+		System.out.println("===JPA 시작합니다.===");
+
+	}
+
+}

@@ -22,15 +22,10 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public int insert(ProductDTO productDTO) throws MyErrorException {
-		if (productList.stream().filter(p -> p.getCode().equals(productDTO.getCode())).count() > 0)
+		if (selectByCode(productDTO.getCode()) != null)
 			throw new MyErrorException(ErrorCode.DUPLICATE_PRODUCT_CODE);
 
-		if (productDTO.getPrice() < 1000 || productDTO.getPrice() > 10000)
-			throw new MyErrorException(ErrorCode.INVALID_PRICE);
-
-		productList.add(productDTO);
-
-		return 0;
+		return productList.add(productDTO) ? 1 : 0;
 	}
 
 	@Override
@@ -38,30 +33,28 @@ public class ProductDAOImpl implements ProductDAO {
 		boolean isDeleted = productList.removeIf((p) -> code.equals(p.getCode()));
 		if (!isDeleted) throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
 		
-		return 0;
+		return isDeleted ? 1 : 0;
 	}
 
 	@Override
 	public ProductDTO selectByCode(String code) {
-		ProductDTO product = productList.stream().filter(p -> code.equals(p.getCode())).findFirst()
-				.orElseThrow(() -> new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE));
-
-		return product;
+		for (ProductDTO p: productList) {
+			if (code.equals(p.getCode())) return p;
+		}
+		
+		return null;
 	}
 
 	@Override
 	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
-		try {
-			ProductDTO updateProduct = selectByCode(productDTO.getCode());
-			
-			updateProduct.setName(productDTO.getName());
-			updateProduct.setPrice(productDTO.getPrice());
-			updateProduct.setDetail(productDTO.getDetail());
-		} catch (MyErrorException e) {
-			throw new MyErrorException(ErrorCode.FAILD_UPDATE);
-		}
+		ProductDTO updateProduct = selectByCode(productDTO.getCode());
+		if (updateProduct == null) throw new MyErrorException(ErrorCode.FAILD_UPDATE);
 		
-		return 0;
+		updateProduct.setName(productDTO.getName());
+		updateProduct.setPrice(productDTO.getPrice());
+		updateProduct.setDetail(productDTO.getDetail());
+		
+		return 1;
 	}
 
 }

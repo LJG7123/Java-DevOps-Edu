@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
@@ -20,24 +21,28 @@ import web.mvc.service.ProductService;
 @RequiredArgsConstructor
 @RestController
 @Slf4j
+@RequestMapping("/products")
 public class ProductController {
+	
 	private final ProductService service;
 	
-	@GetMapping("/products")
+	// 전체 조회
+	@GetMapping
 	public ResponseEntity<?> productList() {
 		List<ProductDTO> productList = service.select();
 		
 		return ResponseEntity.ok(productList);
 	}
 	
-	@PostMapping("/products")
+	// 생성
+	@PostMapping
 	public ResponseEntity<?> insertProduct(@RequestBody ProductDTO product) {
 		log.info("product = {}", product);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.insert(product));
 	}
 	
-//	@PostMapping("/products")
+//	@PostMapping
 //	public ResponseEntity<?> insertProduct(String code, String name, int price, String detail) {
 //		ProductDTO product = new ProductDTO(code, name, price, detail);
 //		log.info("product = {}", product);
@@ -45,29 +50,32 @@ public class ProductController {
 //		return ResponseEntity.status(HttpStatus.CREATED).body(service.insert(product));
 //	}
 	
-	@GetMapping("/products/{code}")
+	// 상세정보
+	@GetMapping("/{code}")
 	public ResponseEntity<?> getProduct(@PathVariable String code) {
 		ProductDTO product = service.selectByCode(code);
 		
 		return ResponseEntity.ok(product);
 	}
 	
-	@DeleteMapping("/products/{code}")
+	// 삭제
+	@DeleteMapping("/{code}")
 	public ResponseEntity<?> deleteProduct(@PathVariable String code) {
 		service.delete(code);
 		
-		return ResponseEntity.ok("success");
+		return ResponseEntity.ok("OK");
 	}
 	
-	@PutMapping("/products/{code}")
+	// 수정
+	@PutMapping("/{code}")
 	public ResponseEntity<?> updateProduct(@PathVariable String code, @RequestBody ProductDTO product) {
 		product.setCode(code);
 		service.updateByCode(product);
 		
-		return ResponseEntity.ok("success");
+		return ResponseEntity.ok("OK");
 	}
 	
-//	@PutMapping("/products/{code}")
+//	@PutMapping("/{code}")
 //	public ResponseEntity<?> updateProduct(@PathVariable String code, String name, int price, String detail) {
 //		ProductDTO product = new ProductDTO(code, name, price, detail);
 //		service.updateByCode(product);

@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=step11_SpringMVC/C:\/Edu\/Spring\/springFramework\/openjdk-11.0.0.1_windows-x64_bin\/jdk-11.0.0.1\/lib\/jrt-fs.jar`java.base=/module=/true=/=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.lang(RuntimeException.class[RuntimeException" modifiers="33" timestamp="1680894163000"/>
+    <typeInfo handle="=step12_MVC_Product/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;web.mvc.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1730079414000"/>
+    <typeInfo handle="=step12_MVC_Product/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;web.mvc.service{ProductService.java[ProductService" modifiers="513" timestamp="1730079420000"/>
+</typeInfoHistroy>
