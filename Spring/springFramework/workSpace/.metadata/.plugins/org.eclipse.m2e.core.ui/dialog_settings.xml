@@ -39,14 +39,17 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="step14_JPA.step14_JPA"/>
 			<item value="step02_AOP.step02_AOP"/>
 			<item value="step01_SpringDI.step01_SpringDI"/>
 		</list>
 		<list key="groupId">
+			<item value="step14_JPA"/>
 			<item value="step02_AOP"/>
 			<item value="step01_SpringDI"/>
 		</list>
 		<list key="artifactId">
+			<item value="step14_JPA"/>
 			<item value="step02_AOP"/>
 			<item value="step01_SpringDI"/>
 		</list>
@@ -86,6 +89,18 @@
 			<item value="C:\Edu\Spring\springFramework\workSpace\step06_AOP"/>
 			<item value="C:\Edu\Spring\springFramework\workSpace\step04_AOP"/>
 			<item value="C:\Edu\Spring\springFramework\workSpace\step01_SpringDI"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -1,0 +1,26 @@
+package kosta.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import lombok.Builder;
+
+@Entity
+@Builder
+public class Member {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long memberId;
+	private String name;
+	private Integer age;
+	
+	// 한 명의 Member는 하나의 팀에 참여할 수 있다
+	@ManyToOne
+	@JoinColumn(name = "tid") // fk 컬럼이름
+	private Team team;
+}

@@ -1,0 +1,37 @@
+package kosta.main;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import kosta.entity.Team;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		System.out.println("===JPA 시작합니다.===");
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAProject");
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction ex = em.getTransaction();
+		
+		ex.begin();
+		
+		Team t1 = Team.builder().teamName("t1").build();
+		Team t2 = Team.builder().teamName("t2").build();
+		Team t3 = Team.builder().teamName("t3").build();
+		
+		em.persist(t1);
+		em.persist(t2);
+		em.persist(t3);
+		
+		ex.commit();
+		
+		em.close();
+		emf.close();
+		System.out.println("===JPA 끝.===");
+
+	}
+
+}

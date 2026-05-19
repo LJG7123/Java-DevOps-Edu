@@ -1,0 +1,12 @@
+package kosta.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity // JPA 관리대상 
+public class Team {
+
+	@Id
+	private Long teamId;
+	private String teamName;
+}

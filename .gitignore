@@ -33,4 +33,8 @@
 !/Spring/springFramework/workspace/
 !/Spring/springFramework/workspace/**
 
+!/SpringBoot/
+!/SpringBoot/IntelliJWork/
+!/SpringBoot/IntelliJWork/**
+
 /Java/work/Pcafe-Kiosk
