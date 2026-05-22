@@ -1,5 +1,0 @@
-package kosta.web.exception;
-
-public class RestGlobalExceptionAdvice {
-
-}
